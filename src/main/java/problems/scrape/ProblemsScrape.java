@@ -2,6 +2,7 @@ package problems.scrape;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import java.time.Duration;
+import java.util.List;
 import java.util.Properties;
 
 public class ProblemsScrape {
@@ -43,7 +45,7 @@ public class ProblemsScrape {
 
             Document document = Jsoup.parse(pageSource);
 
-
+            List<Element> pageNavigationBar = document.getElementsByAttributeValue("role", "navigation");
 
         }catch (Exception e){
             e.printStackTrace();
